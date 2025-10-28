@@ -45,22 +45,6 @@ rm -f "$DOWNLOAD_FILE"
 echo "Creating system link: /usr/local/bin/nvim"
 sudo ln -sf "$INSTALL_PATH/bin/nvim" /usr/local/bin/
 
-# --- Step 3: Clone Configuration ---
-echo -e "\n--- Step 3: Setting up Neovim configuration ---"
-
-# 3a. Remove any old config directory
-echo "Removing any existing config at $NVIM_CONFIG_DIR..."
-rm -rf "$NVIM_CONFIG_DIR"
-
-# 3b. Clone your personal fork
-echo "Cloning personal Neovim configuration fork..."
-# Note: This will create a directory named 'nvim' inside ~/.config/
-git clone "$REPO_URL" "$NVIM_CONFIG_DIR"
-
-# 3c. Change into the new config directory to ensure successful clone verification
-cd "$NVIM_CONFIG_DIR" || { echo "Error: Failed to change directory to $NVIM_CONFIG_DIR"; exit 1; }
-
-# Removed the git identity setup, as it is not needed for read-only access.
 
 # --- Final Step ---
 echo -e "\n=========================================================="
