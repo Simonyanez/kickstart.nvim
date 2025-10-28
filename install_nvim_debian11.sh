@@ -8,8 +8,9 @@
 # 4. ./install_nvim.sh
 
 # --- Configuration Variables ---
-# This URL MUST be your personal GitLab fork URL (SSH recommended for push access)
-REPO_URL="git@github.com:Simonyanez/kickstart.nvim.git"
+# Using HTTPS for easier access (no SSH key required)
+# Change to SSH URL if you have SSH keys set up: git@github.com:Simonyanez/kickstart.nvim.git
+REPO_URL="https://github.com/Simonyanez/kickstart.nvim.git"
 NVIM_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
 
 # --- Step 1: Install Dependencies ---
